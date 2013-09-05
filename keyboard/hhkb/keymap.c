@@ -54,7 +54,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------------------------.
      * |FN4|  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|  `|
      * |-----------------------------------------------------------|
-     * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|
+     * |FN5  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|
      * |-----------------------------------------------------------|
      * |FN2   |  A|  S|  D|FN3|  G|  H|  J|  K|  L|  ;|  '|Ent     |
      * |-----------------------------------------------------------|
@@ -64,7 +64,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *       `-------------------------------------------'
      */
     KEYMAP(FN4, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, \
-           TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
+           FN5, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
            FN2, A,   S,   D, FN3,   G,   H,   J,   K,   L,  SCLN, QUOT,ENT, \
            LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT,SLSH, RSFT,FN1, \
                 LALT,LGUI,         SPC,                RGUI,RALT),
@@ -131,7 +131,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------------------------.
      * |Esc|   |   |   |   |   |   |   |   |   |   |   |   |   |   |
      * |-----------------------------------------------------------|
-     * |Tab  |  |   |   |   |   | 7 | 8 | 9 | = |   |   |   |Backs|
+     * |FN0  |  |   |   |   |   | 7 | 8 | 9 | = |   |   |   |Backs|
      * |-----------------------------------------------------------|
      * |Contro|   |   |   |   |   | 4 | 5 | 6 | + |   |   |Return  |
      * |-----------------------------------------------------------|
@@ -140,8 +140,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *       |Alt|Gui  |           .           |Gui  |Alt|
      *       `-------------------------------------------'
      */
-    KEYMAP(FN4,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,     NO, NO,   NO, NO, \
-           TAB,NO,  NO,  NO,  NO,  NO,  P7,  P8,  P9,PEQL,  NO,     NO,  NO,BSPC, \
+    KEYMAP(ESC,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,     NO, NO,   NO, NO, \
+           TRNS,NO,  NO,  NO,  NO,  NO,  P7,  P8,  P9,PEQL,  NO,     NO,  NO,BSPC, \
            LCTL,NO,  NO,  NO,  NO,  NO,  P4,  P5,  P6,PMNS,    NO,   NO,ENT, \
            LSFT, NO,  NO,  NO,  NO,  NO,  P1,  P2,  P3,PPLS,  NO, RSFT, NO, \
                 LALT,LGUI,        PDOT,                RGUI,RALT),
@@ -173,6 +173,7 @@ static const uint16_t PROGMEM fn_actions[] = {
     [2] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),      // LControl with tap Esc*
     [3] = ACTION_LAYER_TAP_KEY(2, KC_F),              // LControl with tap Esc*
     [4] = ACTION_LAYER_TAP_KEY(3, KC_ESC),            // Hold escape for mouse mode
+    [5] = ACTION_LAYER_TAP_KEY(4, KC_TAB),            // Hold tab for numpad mode
 
     /* [2] = ACTION_LAYER_TAP_KEY(2, KC_SLASH),          // Cursor layer with Slash* */
     /* [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon* */
