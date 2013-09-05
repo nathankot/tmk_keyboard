@@ -137,13 +137,13 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Shift   |   |   |   |   |   | 1 | 2 | 3 | - |   |Shift |   |
      * `-----------------------------------------------------------'
-     *       |Alt|Gui  |           0           |.    |Alt|
+     *       |Alt|Gui  |           0           |Gui  |Alt|
      *       `-------------------------------------------'
      */
     KEYMAP(ESC,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,     NO, NO,   NO, NO, \
            TRNS,NO,  NO,  NO,  NO,  NO,   7,   8,   9,PEQL,  NO,     NO,  NO,BSPC, \
            LCTL,NO,   NO,  NO,  NO,  NO,   4,   5,   6,PPLS,    NO,   NO,ENT, \
-           LdSFT, NO,  NO,  NO,  NO,  NO,   1,   2,   3,PMNS,  NO, RSFT, NO, \
+           LSFT, NO,  NO,  NO,  NO,  NO,   1,   2,   3,PMNS,  NO, RSFT, NO, \
                 LALT,LGUI,           0,                PDOT,RALT),
 
 };
