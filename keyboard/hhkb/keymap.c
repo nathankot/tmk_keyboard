@@ -94,7 +94,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Tab  |  |   |   |   |   |   |   |PgU|   |   |   |   |Backs|
      * |-----------------------------------------------------------|
-     * |Contro|   |   |PgD|FN3|   |Lef|Dow|Up |Rig|   |   |Return  |
+     * |Contro|   |   |PgD|FN0|   |Lef|Dow|Up |Rig|   |   |Return  |
      * |-----------------------------------------------------------|
      * |Shift   |   |   |   |   |   |   |   |   |   |   |Shift |   |
      * `-----------------------------------------------------------'
@@ -103,7 +103,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
            TAB,   NO,  NO,  NO,  NO, NO,   NO,PGUP, NO, NO, NO,  NO,  NO,  BSPC, \
-           LCTL,  NO,  NO,PGDN,FN3, NO,  LEFT,DOWN,UP,  RGHT,NO,  NO,  ENT, \
+           LCTL,  NO,  NO,PGDN,TRNS, NO,  LEFT,DOWN,UP,  RGHT,NO,  NO,  ENT, \
            LSFT,NO,  NO,  NO,  NO,  NO,    NO,  NO,  NO, NO,   NO,RSFT,NO, \
                 LALT,LGUI,          SPC,                RGUI,RALT),
 
