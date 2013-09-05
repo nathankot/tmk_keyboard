@@ -142,8 +142,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     KEYMAP(ESC,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,     NO, NO,   NO, NO, \
            TRNS,NO,  NO,  NO,  NO,  NO,  P7,  P8,  P9,PEQL,  NO,     NO,  NO,BSPC, \
-           LCTL,NO,  NO,  NO,  NO,  NO,  P4,  P5,  P6,PMNS,    NO,   NO,ENT, \
-           LSFT, NO,  NO,  NO,  NO,  NO,  P1,  P2,  P3,PPLS,  NO, RSFT, NO, \
+           LCTL,NO,  NO,  NO,  NO,  NO,  P4,  P5,  P6,PPLS,    NO,   NO,ENT, \
+           LSFT, NO,  NO,  NO,  NO,  NO,  P1,  P2,  P3,PMNS,  NO, RSFT, NO, \
                 LALT,LGUI,        PDOT,                RGUI,RALT),
 
 };
