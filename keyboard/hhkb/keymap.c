@@ -56,18 +56,18 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|
      * |-----------------------------------------------------------|
-     * |Contro|  A|  S|  D|  F|  G|  H|  J|  K|  L|Fn3|  '|Fn4     |
+     * |Contro|  A|  S|  D|  F|  G|  H|  J|  K|  L|  ;|  '|Ent     |
      * |-----------------------------------------------------------|
-     * |Fn5     |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|Fn2|Shift |Fn1|
+     * |shift |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift |Fn1|
      * `-----------------------------------------------------------'
-     *       |Gui|Alt  |         Fn6           |Alt  |Fn7|
+     *       |Alt|Gui  |        Space          |Gui  |Alt|
      *       `-------------------------------------------'
      */
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, \
            TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
-           LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   FN3, QUOT,FN4, \
-            FN5,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, FN2, RSFT,FN1, \
-                LGUI,LALT,          FN6,                RALT,RGUI),
+           LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,  SCLN, QUOT,ENT, \
+           LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT,SLSH, RSFT,FN1, \
+                LALT,LGUI,         SPC,                RGUI,RALT),
 
     /* Layer 1: HHKB mode (HHKB Fn)
      * ,-----------------------------------------------------------.
@@ -79,14 +79,14 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Shift   |   |   |   |   |   |  +|  -|End|PgD|Dow|Shift |   |
      * `-----------------------------------------------------------'
-     *       |Gui|Alt  |         Space         |Alt  |Gui|
+     *       |Alt|Gui  |         Space         |Gui  |Alt|
      *       `-------------------------------------------'
      */ 
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
            CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS, UP,  NO,  BSPC, \
            LCTL,VOLD,VOLU,MUTE,NO,  NO,  PAST,PSLS,HOME,PGUP,LEFT,RGHT,ENT, \
            LSFT,NO,  NO,  NO,  NO,  NO,  PPLS,PMNS,END, PGDN,DOWN,RSFT,TRNS, \
-                LGUI,LALT,          SPC,                RALT,RGUI),
+                LALT,LGUI,          SPC,                RGUI,RALT),
 
     /* Layer 2: Vi mode (Slash)
      * ,-----------------------------------------------------------.
@@ -98,14 +98,14 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Shift   |   |   |   |   |   |Hom|PgD|PgUlEnd|Fn0|Shift |   |
      * `-----------------------------------------------------------'
-     *       |Gui|Alt  |          Space        |Alt  |Gui|
+     *       |Alt|Gui  |         Space         |Gui  |Alt|
      *       `-------------------------------------------'
      */
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
            TAB, HOME,PGDN,UP,  PGUP,END, HOME,PGDN,PGUP,END, NO,  NO,  NO,  BSPC, \
            LCTL,NO,  LEFT,DOWN,RGHT,NO,  LEFT,DOWN,UP,  RGHT,NO,  NO,  ENT, \
            LSFT,NO,  NO,  NO,  NO,  NO,  HOME,PGDN,PGUP,END, TRNS,RSFT,NO, \
-                LGUI,LALT,          SPC,                RALT,RGUI),
+                LALT,LGUI,          SPC,                RGUI,RALT),
 
     /* Layer 3: Mouse mode (Semicolon)
      * ,-----------------------------------------------------------.
@@ -117,7 +117,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Shift   |   |   |   |   |Mb3|Mb2|Mb1|Mb4|Mb5|   |Shift |   |
      * `-----------------------------------------------------------'
-     *      |Gui |Alt  |          Mb1          |Alt  |Fn0|
+     *      |Alt |Gui  |          Mb1          |Gui  |Alt|
      *      `--------------------------------------------'
      * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel 
      */
@@ -125,46 +125,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            TAB, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,WH_U,WH_R,NO,  NO,  NO,  BSPC, \
            LCTL,NO,  ACL0,ACL1,ACL2,NO,  MS_L,MS_D,MS_U,MS_R,TRNS,QUOT,ENT, \
            LSFT,NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,BTN4,BTN5,SLSH,RSFT,NO, \
-                LGUI,LALT,          BTN1,               RALT,TRNS),
+                TRNS,TRNS,          BTN1,               TRNS,TRNS),
 
-    /* Layer 4: Matias half-qwerty keyboard style (Space)
-     * ,-----------------------------------------------------------.
-     * |  -|  0|  9|  8|  7|  6|  5|  4|  3|  2|  1|   |   |   |Esc|
-     * |-----------------------------------------------------------|
-     * |Backs|  P|  O|  I|  U|  Y|  T|  R|  E|  W|  Q|   |   |Tab  |
-     * |-----------------------------------------------------------|
-     * |Contro|  ;|  L|  K|  J|  H|  G|  F|  D|  S|  A|Con|Control |
-     * |-----------------------------------------------------------|
-     * |Shift   |  /|  .|  ,|  M|  N|  B|  V|  C|  X|  Z|Shift |   |
-     * `-----------------------------------------------------------'
-     *      |Gui |Alt  |          Fn0          |Alt  |Gui|
-     *      `--------------------------------------------'
-     */
-    KEYMAP(MINS,0,   9,   8,   7,   6,   5,   4,   3,   2,   1,   NO,  NO,  NO,  ESC, \
-           BSPC,P,   O,   I,   U,   Y,   T,   R,   E,   W,   Q,   NO,  NO,  TAB, \
-           LCTL,SCLN,L,   K,   J,   H,   G,   F,   D,   S,   A,   RCTL,RCTL, \
-           LSFT,SLSH,DOT, COMM,M,   N,   B,   V,   C,   X,   Z,   RSFT,NO, \
-                LGUI,LALT,          TRNS,               RALT,RGUI),
-
-    /* Layer5: another Mouse mode (Space)
-     * ,-----------------------------------------------------------.
-     * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
-     * |-----------------------------------------------------------|
-     * |Tab  |   |   |   |   |   |MwL|MwD|MwU|MwR|   |Wbk|Wfr|Close|
-     * |-----------------------------------------------------------|
-     * |Contro|   |   |   |   |   |McL|McD|McU|McR|Fn0|   |Return  |
-     * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |Mb3|Mb2|Mb1|Mb4|Mb5|   |Shift |   |
-     * `-----------------------------------------------------------'
-     *      |Gui |Alt  |          Fn0          |Alt  |Fn0|
-     *      `--------------------------------------------'
-     * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel 
-     */
-    KEYMAP(ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           TAB, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,WH_U,WH_R,WSTP,WBAK,WFWD,FN8, \
-           LCTL,NO,  ACL0,ACL1,ACL2,NO,  MS_L,MS_D,MS_U,MS_R,NO,  NO,  ENT, \
-           LSFT,NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,BTN4,BTN5,NO,  RSFT,NO, \
-                LGUI,LALT,          TRNS,               RALT,RGUI),
 };
 
 
@@ -189,13 +151,13 @@ enum macro_id {
 static const uint16_t PROGMEM fn_actions[] = {
     [0] = ACTION_DEFAULT_LAYER_SET(0),                // Default layer(not used)
     [1] = ACTION_LAYER_TAP_TOGGLE(1),                 // HHKB layer(toggle with 5 taps)
-    [2] = ACTION_LAYER_TAP_KEY(2, KC_SLASH),          // Cursor layer with Slash*
-    [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon*
-    [4] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),      // RControl with tap Enter*
-    [5] = ACTION_MODS_ONESHOT(MOD_LSFT),              // Oneshot Shift*
-    [6] = ACTION_LAYER_TAP_KEY(5, KC_SPC),            // Mousekey layer with Space
-    [7] = ACTION_LAYER_TOGGLE(3),                     // Mousekey layer(toggle)
-    [8] = ACTION_MODS_KEY(MOD_LCTL, KC_W),            // Close Tab
+    /* [2] = ACTION_LAYER_TAP_KEY(2, KC_SLASH),          // Cursor layer with Slash* */
+    /* [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon* */
+    /* [4] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),      // RControl with tap Enter* */
+    /* [5] = ACTION_MODS_ONESHOT(MOD_LSFT),              // Oneshot Shift* */
+    /* [6] = ACTION_LAYER_TAP_KEY(5, KC_SPC),            // Mousekey layer with Space */
+    /* [7] = ACTION_LAYER_TOGGLE(3),                     // Mousekey layer(toggle) */
+    /* [8] = ACTION_MODS_KEY(MOD_LCTL, KC_W),            // Close Tab */
 
 //  [8] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_BSPC),       // LControl with tap Backspace
 //  [9] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_ESC),        // LControl with tap Esc
