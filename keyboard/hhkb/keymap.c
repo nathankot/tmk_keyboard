@@ -131,20 +131,20 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------------------------.
      * |Esc|   |   |   |   |   |   |   |   |   |   |   |   |   |   |
      * |-----------------------------------------------------------|
-     * |Tab  |  |   |   |   |   | 7 | 8 | 9 |   |   |   |   |Backs|
+     * |Tab  |  |   |   |   |   | 7 | 8 | 9 | = |   |   |   |Backs|
      * |-----------------------------------------------------------|
-     * |Contro|   |   |   |   |   | 4 | 5 | 6 |   |   |   |Return  |
+     * |Contro|   |   |   |   |   | 4 | 5 | 6 | + |   |   |Return  |
      * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |   | 1 | 2 | 3 |   |   |Shift |   |
+     * |Shift   |   |   |   |   |   | 1 | 2 | 3 | - |   |Shift |   |
      * `-----------------------------------------------------------'
-     *       |Alt|Gui  |         Space         |Gui  |Alt|
+     *       |Alt|Gui  |           .           |Gui  |Alt|
      *       `-------------------------------------------'
      */
     KEYMAP(FN4,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,     NO, NO,   NO, NO, \
-           TAB,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,     NO,  NO,BSPC, \
-           LCTL,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,    NO,   NO,ENT, \
-           LSFT,NO, NO,  NO,  NO,  NO,  NO,  NO,     NO, NO,  NO, RSFT, NO, \
-                LALT,LGUI,         SPC,                RGUI,RALT),
+           TAB,NO,  NO,  NO,  NO,  NO,  P7,  P8,  P9,PEQL,  NO,     NO,  NO,BSPC, \
+           LCTL,NO,  NO,  NO,  NO,  NO,  P4,  P5,  P6,PMNS,    NO,   NO,ENT, \
+           LSFT, NO,  NO,  NO,  NO,  NO,  P1,  P2,  P3,PPLS,  NO, RSFT, NO, \
+                LALT,LGUI,        PDOT,                RGUI,RALT),
 
 };
 
