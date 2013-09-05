@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEVICE_VER      0x0104
 #define MANUFACTURER    t.m.k.
 #define PRODUCT         HHKB2PRO.NK
-#define DESCRIPTION     Nathan Kot's HHKB.
+#define DESCRIPTION     Nathan Kots HHKB.
 
 
 /* matrix size */
