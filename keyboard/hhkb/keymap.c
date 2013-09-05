@@ -88,7 +88,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LSFT,NO,  NO,  NO,  NO,  NO,  PPLS,PMNS,END, PGDN,DOWN,RSFT,TRNS, \
                 LALT,LGUI,          SPC,                RGUI,RALT),
 
-    /* Layer 2: Vi mode (Slash)
+    /* Layer 2: Vi mode
      * ,-----------------------------------------------------------.
      * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
@@ -107,7 +107,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LSFT,NO,  NO,  NO,  NO,  NO,    NO,  NO,  NO, NO,   NO,RSFT,NO, \
                 LALT,LGUI,          SPC,                RGUI,RALT),
 
-    /* Layer 3: Mouse mode (Semicolon)
+    /* Layer 3: Mouse mode
      * ,-----------------------------------------------------------.
      * |FN0| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
@@ -126,6 +126,25 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             LCTL,NO,  ACL0,ACL1,ACL2,NO,  MS_L,MS_D,MS_U,MS_R, NO,QUOT,ENT, \
             LSFT,NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,BTN4,BTN5,SLSH,RSFT,NO, \
                   TRNS,TRNS,          BTN1,               TRNS,TRNS),
+
+    /* Layer 4: Numpad mode
+     * ,-----------------------------------------------------------.
+     * |Esc|   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+     * |-----------------------------------------------------------|
+     * |Tab  |  |   |   |   |   | 7 | 8 | 9 |   |   |   |   |Backs|
+     * |-----------------------------------------------------------|
+     * |Contro|   |   |   |   |   | 4 | 5 | 6 |   |   |   |Return  |
+     * |-----------------------------------------------------------|
+     * |Shift   |   |   |   |   |   | 1 | 2 | 3 |   |   |Shift |   |
+     * `-----------------------------------------------------------'
+     *       |Alt|Gui  |         Space         |Gui  |Alt|
+     *       `-------------------------------------------'
+     */
+    KEYMAP(FN4,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,     NO, NO,   NO, NO, \
+           TAB,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,     NO,  NO,BSPC, \
+           LCTL,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,    NO,   NO,ENT, \
+           LSFT,NO, NO,  NO,  NO,  NO,  NO,  NO,     NO, NO,  NO, RSFT, NO, \
+                LALT,LGUI,         SPC,                RGUI,RALT),
 
 };
 
