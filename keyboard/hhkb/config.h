@@ -23,8 +23,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID      0xCAFE
 #define DEVICE_VER      0x0104
 #define MANUFACTURER    t.m.k.
-#define PRODUCT         HHKB mod
-#define DESCRIPTION     t.m.k. keyboard firmware for HHKB mod
+#define PRODUCT         HHKB2PRO.NK
+#define DESCRIPTION     Nathan Kot's HHKB.
 
 
 /* matrix size */
