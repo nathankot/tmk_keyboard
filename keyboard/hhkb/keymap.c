@@ -56,7 +56,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|
      * |-----------------------------------------------------------|
-     * |Contro|  A|  S|  D|  F|  G|  H|  J|  K|  L|  ;|  '|Ent     |
+     * |FN2   |  A|  S|  D|  F|  G|  H|  J|  K|  L|  ;|  '|Ent     |
      * |-----------------------------------------------------------|
      * |shift |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift |Fn1|
      * `-----------------------------------------------------------'
@@ -65,7 +65,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, \
            TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
-           LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,  SCLN, QUOT,ENT, \
+           FN2, A,   S,   D,   F,   G,   H,   J,   K,   L,  SCLN, QUOT,ENT, \
            LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT,SLSH, RSFT,FN1, \
                 LALT,LGUI,         SPC,                RGUI,RALT),
 
@@ -149,11 +149,12 @@ enum macro_id {
  * Fn action definition
  */
 static const uint16_t PROGMEM fn_actions[] = {
-    [0] = ACTION_DEFAULT_LAYER_SET(0),                // Default layer(not used)
+    [0] = ACTION_DEFAULT_LAYER_SET(0),                // Default layer
     [1] = ACTION_LAYER_TAP_TOGGLE(1),                 // HHKB layer(toggle with 5 taps)
+    [2] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),      // LControl with tap Esc*
+
     /* [2] = ACTION_LAYER_TAP_KEY(2, KC_SLASH),          // Cursor layer with Slash* */
     /* [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon* */
-    /* [4] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),      // RControl with tap Enter* */
     /* [5] = ACTION_MODS_ONESHOT(MOD_LSFT),              // Oneshot Shift* */
     /* [6] = ACTION_LAYER_TAP_KEY(5, KC_SPC),            // Mousekey layer with Space */
     /* [7] = ACTION_LAYER_TOGGLE(3),                     // Mousekey layer(toggle) */
