@@ -92,19 +92,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------------------------.
      * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
-     * |Tab  |Hom|PgD|Up |PgU|End|Hom|PgD|PgU|End|   |   |   |Backs|
+     * |Tab  |  |   |   |   |   |   |   |PgU|   |   |   |   |Backs|
      * |-----------------------------------------------------------|
-     * |Contro|   |Lef|Dow|FN3|   |Lef|Dow|Up |Rig|   |   |Return  |
+     * |Contro|   |   |PgD|FN3|   |Lef|Dow|Up |Rig|   |   |Return  |
      * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |   |Hom|PgD|PgUlEnd|Fn0|Shift |   |
+     * |Shift   |   |   |   |   |   |   |   |   |   |   |Shift |   |
      * `-----------------------------------------------------------'
      *       |Alt|Gui  |         Space         |Gui  |Alt|
      *       `-------------------------------------------'
      */
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           TAB, HOME,PGDN,UP,  PGUP,END, HOME,PGDN,PGUP,END, NO,  NO,  NO,  BSPC, \
-           LCTL,NO,  LEFT,DOWN,FN3, NO,  LEFT,DOWN,UP,  RGHT,NO,  NO,  ENT, \
-           LSFT,NO,  NO,  NO,  NO,  NO,  HOME,PGDN,PGUP,END, TRNS,RSFT,NO, \
+           TAB,   NO,  NO,  NO,  NO, NO,   NO,  NO,PGUP,NO, NO,  NO,  NO,  BSPC, \
+           LCTL,  NO,  NO,PGDN,FN3, NO,  LEFT,DOWN,UP,  RGHT,NO,  NO,  ENT, \
+           LSFT,NO,  NO,  NO,  NO,  NO,    NO,  NO,  NO, NO,   NO,RSFT,NO, \
                 LALT,LGUI,          SPC,                RGUI,RALT),
 
     /* Layer 3: Mouse mode (Semicolon)
