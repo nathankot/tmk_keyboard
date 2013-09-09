@@ -174,8 +174,8 @@ static const uint16_t PROGMEM fn_actions[] = {
     [3] = ACTION_LAYER_TAP_KEY(2, KC_F),              // LControl with tap Esc*
     [4] = ACTION_LAYER_TAP_KEY(3, KC_ESC),            // Hold escape for mouse mode
     [5] = ACTION_LAYER_TAP_KEY(4, KC_TAB),            // Hold tab for numpad mode
-    [6] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_LBRC),
-    [7] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_RBRC)
+    [6] = ACTION_MACRO_TAP(LSHIFT_PAREN),             // Macro: LShift with tap '('
+    [7] = ACTION_MACRO_TAP(RSHIFT_PAREN)              // Macro: RShift with tap ')'
 
     /* [2] = ACTION_LAYER_TAP_KEY(2, KC_SLASH),          // Cursor layer with Slash* */
     /* [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon* */
@@ -188,8 +188,6 @@ static const uint16_t PROGMEM fn_actions[] = {
 //  [9] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_ESC),        // LControl with tap Esc
 //  [11] = ACTION_FUNCTION_TAP(LSHIFT_LPAREN),         // Function: LShift with tap '('
 //  [12] = ACTION_FUNCTION_TAP(RSHIFT_RPAREN),         // Function: RShift with tap ')'
-//  [13] = ACTION_MACRO_TAP(LSHIFT_PAREN),             // Macro: LShift with tap '('
-//  [14] = ACTION_MACRO_TAP(RSHIFT_PAREN),             // Macro: RShift with tap ')'
 //  [15] = ACTION_MACRO(HELLO),                        // Macro: say hello
 //  [9] = ACTION_MACRO(VOLUP),                         // Macro: media key
 };
@@ -220,15 +218,8 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
                 return (event.pressed ?
                         MACRO( D(RSHIFT), END ) : MACRO( U(RSHIFT), END ) );
             }
-        case HELLO:
-            return (event.pressed ?
-                    MACRO( I(0), T(H), T(E), T(L), T(L), W(255), T(O), END ) :
-                    MACRO_NONE );
-        case VOLUP:
-            return (event.pressed ?
-                    MACRO( D(VOLU), U(VOLU), END ) :
-                    MACRO_NONE );
     }
+
     return MACRO_NONE;
 }
 
