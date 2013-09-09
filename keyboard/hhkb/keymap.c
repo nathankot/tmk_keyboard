@@ -82,7 +82,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *       |Alt|Gui  |         Space         |Gui  |Alt|
      *       `-------------------------------------------'
      */ 
-    KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
+    KEYMAP(ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
            CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,   NO,  NO,  NO,VOLU,  NO,  BSPC, \
            LCTL,VOLD,VOLU,MUTE,NO,  NO,    NO,  NO,  NO,  NO,F14,F15,ENT, \
            LSFT,NO,  NO,  NO,  NO,  NO,    NO,  NO, NO,   NO,VOLD,RSFT,TRNS, \
@@ -101,7 +101,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *       |Alt|Gui  |         Space         |Gui  |Alt|
      *       `-------------------------------------------'
      */
-    KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
+    KEYMAP(ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
            TAB,   NO,  NO,  NO,  NO, NO,   NO,PGUP, NO, NO, NO,  NO,  NO,  BSPC, \
            LCTL,  NO,  NO,PGDN,TRNS, NO,  LEFT,DOWN,UP,  RGHT,NO,  NO,  ENT, \
            LSFT,NO,  NO,  NO,  NO,  NO,    NO,  NO,  NO, NO,   NO,RSFT,NO, \
@@ -170,9 +170,9 @@ enum macro_id {
 static const uint16_t PROGMEM fn_actions[] = {
     [0] = ACTION_DEFAULT_LAYER_SET(0),                // Default layer
     [1] = ACTION_LAYER_TAP_TOGGLE(1),                 // HHKB layer(toggle with 5 taps)
-    [2] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_GRV),      // LControl with tap Esc*
+    [2] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),      // LControl with tap Esc*
     [3] = ACTION_LAYER_TAP_KEY(2, KC_F),              // LControl with tap Esc*
-    [4] = ACTION_LAYER_TAP_KEY(3, KC_ESC),            // Hold escape for mouse mode
+    [4] = ACTION_LAYER_TAP_KEY(3, KC_GRAVE),            // Hold escape for mouse mode
     [5] = ACTION_LAYER_TAP_KEY(4, KC_TAB),            // Hold tab for numpad mode
     [6] = ACTION_MACRO_TAP(LSHIFT_PAREN),             // Macro: LShift with tap '('
     [7] = ACTION_MACRO_TAP(RSHIFT_PAREN)              // Macro: RShift with tap ')'
