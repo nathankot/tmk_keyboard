@@ -73,19 +73,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------------------------.
      * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
-     * |Caps |   |   |   |   |   |   |   |Psc|Slk|Pus|Up |   |Backs|
+     * |Caps |   |   |   |   |   |   |   |Psc|Slk|Pus|VoU|   |Backs|
      * |-----------------------------------------------------------|
-     * |Contro|VoD|VoU|Mut|   |   |  *|  /|Hom|PgU|Lef|Rig|Enter   |
+     * |Contro|VoD|VoU|Mut|   |   |  *|  /|Hom|PgU|F14|F15|Enter   |
      * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |   |  +|  -|End|PgD|Dow|Shift |   |
+     * |Shift   |   |   |   |   |   |  +|  -|End|PgD|VoD|Shift |   |
      * `-----------------------------------------------------------'
      *       |Alt|Gui  |         Space         |Gui  |Alt|
      *       `-------------------------------------------'
      */ 
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS, UP,  NO,  BSPC, \
-           LCTL,VOLD,VOLU,MUTE,NO,  NO,  PAST,PSLS,HOME,PGUP,LEFT,RGHT,ENT, \
-           LSFT,NO,  NO,  NO,  NO,  NO,  PPLS,PMNS,END, PGDN,DOWN,RSFT,TRNS, \
+           CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS,VOLU,  NO,  BSPC, \
+           LCTL,VOLD,VOLU,MUTE,NO,  NO,  PAST,PSLS,HOME,PGUP,F14,F15,ENT, \
+           LSFT,NO,  NO,  NO,  NO,  NO,  PPLS,PMNS,END, PGDN,VOLD,RSFT,TRNS, \
                 LALT,LGUI,          SPC,                RGUI,RALT),
 
     /* Layer 2: Vi mode
