@@ -170,7 +170,7 @@ enum macro_id {
 static const uint16_t PROGMEM fn_actions[] = {
     [0] = ACTION_DEFAULT_LAYER_SET(0),                // Default layer
     [1] = ACTION_LAYER_TAP_TOGGLE(1),                 // HHKB layer(toggle with 5 taps)
-    [2] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),      // LControl with tap Esc*
+    [2] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_GRV),      // LControl with tap Esc*
     [3] = ACTION_LAYER_TAP_KEY(2, KC_F),              // LControl with tap Esc*
     [4] = ACTION_LAYER_TAP_KEY(3, KC_ESC),            // Hold escape for mouse mode
     [5] = ACTION_LAYER_TAP_KEY(4, KC_TAB),            // Hold tab for numpad mode
