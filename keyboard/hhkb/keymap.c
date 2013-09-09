@@ -58,7 +58,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |FN2   |  A|  S|  D|FN3|  G|  H|  J|  K|  L|  ;|  '|Ent     |
      * |-----------------------------------------------------------|
-     * |shift |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift |Fn1|
+     * |FN6     |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|FN7   |Fn1|
      * `-----------------------------------------------------------'
      *       |Alt|Gui  |        Space          |Gui  |Alt|
      *       `-------------------------------------------'
@@ -66,26 +66,26 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(FN4, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, \
            FN5, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
            FN2, A,   S,   D, FN3,   G,   H,   J,   K,   L,  SCLN, QUOT,ENT, \
-           LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT,SLSH, RSFT,FN1, \
+           FN6, Z,   X,   C,   V,   B,   N,   M,   COMM,DOT,SLSH,  FN7,FN1, \
                 LALT,LGUI,         SPC,                RGUI,RALT),
 
     /* Layer 1: HHKB mode (HHKB Fn)
      * ,-----------------------------------------------------------.
      * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
-     * |Caps |   |   |   |   |   |   |   |Psc|Slk|Pus|VoU|   |Backs|
+     * |Caps |   |   |   |   |   |   |   |   |   |   |VoU|   |Backs|
      * |-----------------------------------------------------------|
-     * |Contro|VoD|VoU|Mut|   |   |  *|  /|Hom|PgU|F14|F15|Enter   |
+     * |Contro|VoD|VoU|Mut|   |   |   |   |   |   |F14|F15|Enter   |
      * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |   |  +|  -|End|PgD|VoD|Shift |   |
+     * |Shift   |   |   |   |   |   |   |   |   |   |VoD|Shift |   |
      * `-----------------------------------------------------------'
      *       |Alt|Gui  |         Space         |Gui  |Alt|
      *       `-------------------------------------------'
      */ 
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS,VOLU,  NO,  BSPC, \
-           LCTL,VOLD,VOLU,MUTE,NO,  NO,  PAST,PSLS,HOME,PGUP,F14,F15,ENT, \
-           LSFT,NO,  NO,  NO,  NO,  NO,  PPLS,PMNS,END, PGDN,VOLD,RSFT,TRNS, \
+           CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,   NO,  NO,  NO,VOLU,  NO,  BSPC, \
+           LCTL,VOLD,VOLU,MUTE,NO,  NO,    NO,  NO,  NO,  NO,F14,F15,ENT, \
+           LSFT,NO,  NO,  NO,  NO,  NO,    NO,  NO, NO,   NO,VOLD,RSFT,TRNS, \
                 LALT,LGUI,          SPC,                RGUI,RALT),
 
     /* Layer 2: Vi mode
@@ -174,6 +174,8 @@ static const uint16_t PROGMEM fn_actions[] = {
     [3] = ACTION_LAYER_TAP_KEY(2, KC_F),              // LControl with tap Esc*
     [4] = ACTION_LAYER_TAP_KEY(3, KC_ESC),            // Hold escape for mouse mode
     [5] = ACTION_LAYER_TAP_KEY(4, KC_TAB),            // Hold tab for numpad mode
+    [6] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_LBRC),
+    [7] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_RBRC)
 
     /* [2] = ACTION_LAYER_TAP_KEY(2, KC_SLASH),          // Cursor layer with Slash* */
     /* [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon* */
