@@ -126,7 +126,11 @@ enum macro_id {
 /*
  * Fn action definition
  */
-static const uint16_t PROGMEM fn_actions[] = {
+#ifdef KEYMAP_SECTION_ENABLE
+const uint16_t fn_actions[] __attribute__ ((section (".keymap.fn_actions"))) = {
+#else
+const uint16_t fn_actions[] PROGMEM = {
+#endif
     [0] = ACTION_DEFAULT_LAYER_SET(0),                // Default layer(not used)
     [1] = ACTION_LAYER_TAP_TOGGLE(1),                 // HHKB layer(toggle with 5 taps)
     [2] = ACTION_LAYER_TAP_KEY(2, KC_SLASH),          // Cursor layer with Slash*
