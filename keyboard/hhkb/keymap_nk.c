@@ -87,19 +87,19 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * ,-----------------------------------------------------------.
      * |Esc|   |   |   |   |   |   |   |   |   |   |   |   |   |   |
      * |-----------------------------------------------------------|
-     * |FN0  |  |   |   |   |   | 7 | 8 | 9 | = |   |   |   |Backs|
+     * |FN0  |  |   |   |   |   | 7 | 8 | 9 |   |   |   |   |Backs|
      * |-----------------------------------------------------------|
-     * |Contro|   |   |   |   |   | 4 | 5 | 6 | + |   |   |Return  |
+     * |Contro|   |   |   |   |   | 4 | 5 | 6 |   |   |   |Return  |
      * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |   | 1 | 2 | 3 | - |   |Shift |   |
+     * |Shift   |   |   |   |   |   | 1 | 2 | 3 |   |   |Shift |   |
      * `-----------------------------------------------------------'
      *       |Alt|Gui  |           0           |Gui  |Alt|
      *       `-------------------------------------------'
      */
     KEYMAP(ESC,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,     NO, NO,   NO, NO, \
-           TRNS,NO,  NO,  NO,  NO,  NO,   7,   8,   9,PEQL,  NO,     NO,  NO,BSPC, \
-           LCTL,NO,   NO,  NO,  NO,  NO,   4,   5,   6,PPLS,    NO,   NO,ENT, \
-           LSFT, NO,  NO,  NO,  NO,  NO,   1,   2,   3,PMNS,  NO, RSFT, NO, \
+           TRNS,NO,  NO,  NO,  NO,  NO,   7,   8,   9,  NO,  NO,     NO,  NO,BSPC, \
+           LCTL,NO,   NO,  NO,  NO,  NO,   4,   5,   6,  NO,    NO,   NO,ENT, \
+           LSFT, NO,  NO,  NO,  NO,  NO,   1,   2,   3,  NO,  NO, RSFT, NO, \
                 LALT,LGUI,           0,                PDOT,RALT),
 };
 
