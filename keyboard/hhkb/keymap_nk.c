@@ -101,7 +101,6 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
            LCTL,NO,   NO,  NO,  NO,  NO,   4,   5,   6,PPLS,    NO,   NO,ENT, \
            LSFT, NO,  NO,  NO,  NO,  NO,   1,   2,   3,PMNS,  NO, RSFT, NO, \
                 LALT,LGUI,           0,                PDOT,RALT),
-
 };
 
 
