@@ -128,13 +128,13 @@ const uint16_t fn_actions[] __attribute__ ((section (".keymap.fn_actions"))) = {
 const uint16_t fn_actions[] PROGMEM = {
 #endif
     [0] = ACTION_DEFAULT_LAYER_SET(0),                // Default layer
-    [1] = ACTION_LAYER_TAP_TOGGLE(1),                 // HHKB layer(toggle with 5 taps)
+    [1] = ACTION_LAYER_MOMENTARY(1),                  // HHKB layer
     [2] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),      // LControl with tap Esc*
     [3] = ACTION_LAYER_TAP_KEY(2, KC_F),              // LControl with tap Esc*
-    [4] = ACTION_LAYER_TAP_KEY(3, KC_GRAVE),            // Hold escape for mouse mode
+    [4] = ACTION_LAYER_TAP_KEY(3, KC_GRAVE),          // Hold escape for mouse mode
     [5] = ACTION_LAYER_TAP_KEY(4, KC_TAB),            // Hold tab for numpad mode
     [6] = ACTION_MACRO_TAP(LSHIFT_PAREN),             // Macro: LShift with tap '('
-    [7] = ACTION_MACRO_TAP(RSHIFT_PAREN),              // Macro: RShift with tap ')'
+    [7] = ACTION_MACRO_TAP(RSHIFT_PAREN),             // Macro: RShift with tap ')'
 
 //  [8] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_BSPC),       // LControl with tap Backspace
 //  [9] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_ESC),        // LControl with tap Esc
