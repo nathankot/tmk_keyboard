@@ -1,6 +1,3 @@
-/*
- * Hasu: my personal keymap
- */
 #include "keymap_common.h"
 
 
@@ -131,26 +128,25 @@ const uint16_t fn_actions[] __attribute__ ((section (".keymap.fn_actions"))) = {
 #else
 const uint16_t fn_actions[] PROGMEM = {
 #endif
-    [0] = ACTION_DEFAULT_LAYER_SET(0),                // Default layer(not used)
+    [0] = ACTION_DEFAULT_LAYER_SET(0),                // Default layer
     [1] = ACTION_LAYER_TAP_TOGGLE(1),                 // HHKB layer(toggle with 5 taps)
-    [2] = ACTION_LAYER_TAP_KEY(2, KC_SLASH),          // Cursor layer with Slash*
-    [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon*
-    [4] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),      // RControl with tap Enter*
-    [5] = ACTION_MODS_ONESHOT(MOD_LSFT),              // Oneshot Shift*
-    [6] = ACTION_LAYER_TAP_KEY(5, KC_SPC),            // Mousekey layer with Space
-    [7] = ACTION_LAYER_TOGGLE(3),                     // Mousekey layer(toggle)
-    [8] = ACTION_MODS_KEY(MOD_LCTL, KC_W),            // Close Tab
-    [9] = ACTION_MODS_KEY(MOD_LSFT, KC_4),            // Shift stuck test
+    [2] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),      // LControl with tap Esc*
+    [3] = ACTION_LAYER_TAP_KEY(2, KC_F),              // LControl with tap Esc*
+    [4] = ACTION_LAYER_TAP_KEY(3, KC_GRAVE),            // Hold escape for mouse mode
+    [5] = ACTION_LAYER_TAP_KEY(4, KC_TAB),            // Hold tab for numpad mode
+    [6] = ACTION_MACRO_TAP(LSHIFT_PAREN),             // Macro: LShift with tap '('
+    [7] = ACTION_MACRO_TAP(RSHIFT_PAREN),              // Macro: RShift with tap ')'
 
 //  [8] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_BSPC),       // LControl with tap Backspace
 //  [9] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_ESC),        // LControl with tap Esc
-  [11] = ACTION_FUNCTION_TAP(LSHIFT_LPAREN),         // Function: LShift with tap '('
-  [12] = ACTION_FUNCTION_TAP(RSHIFT_RPAREN),         // Function: RShift with tap ')'
+//  [11] = ACTION_FUNCTION_TAP(LSHIFT_LPAREN),         // Function: LShift with tap '('
+//  [12] = ACTION_FUNCTION_TAP(RSHIFT_RPAREN),         // Function: RShift with tap ')'
 //  [13] = ACTION_MACRO_TAP(LSHIFT_PAREN),             // Macro: LShift with tap '('
 //  [14] = ACTION_MACRO_TAP(RSHIFT_PAREN),             // Macro: RShift with tap ')'
 //  [15] = ACTION_MACRO(HELLO),                        // Macro: say hello
 //  [9] = ACTION_MACRO(VOLUP),                         // Macro: media key
 };
+
 
 
 /*
