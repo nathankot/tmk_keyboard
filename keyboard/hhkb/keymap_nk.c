@@ -8,7 +8,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 #endif
     /* Layer 0: Default Layer
      * ,-----------------------------------------------------------.
-     * |FN4|  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|  `|
+     * |FN4|  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|FN9|
      * |-----------------------------------------------------------|
      * |FN5  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|
      * |-----------------------------------------------------------|
@@ -19,7 +19,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      *       |Alt|Gui  |        Space          |Gui  |Alt|
      *       `-------------------------------------------'
      */
-    KEYMAP(FN4, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, \
+    KEYMAP(FN4, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,FN9, \
            FN5, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
            FN2, A,   S,   D, FN3,   G,   H,   J,   K,   L,  SCLN, QUOT,ENT, \
            FN6, Z,   X,   C,   V,   B,   N,   M,   COMM,DOT,SLSH,  FN7,FN1, \
@@ -65,7 +65,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 
     /* Layer 3: Mouse mode
      * ,-----------------------------------------------------------.
-     * |FN0| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
+     * |TNS| FN8| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|N10|TNS|
      * |-----------------------------------------------------------|
      * |Tab  |   |   |   |   |   |MwL|MwD|MwU|MwR|   |   |   |Backs|
      * |-----------------------------------------------------------|
@@ -77,7 +77,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      *      `--------------------------------------------'
      * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel
      */
-    KEYMAP(TRNS, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
+    KEYMAP(TRNS,FN8,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12,FN10, TRNS, \
             TAB, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,WH_U,WH_R,NO,  NO,  NO,  BSPC, \
             LCTL,NO,  ACL0,ACL1,ACL2,NO,  MS_L,MS_D,MS_U,MS_R, NO,QUOT,ENT, \
             LSFT,NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,BTN4,BTN5,SLSH,RSFT,NO, \
@@ -114,6 +114,8 @@ enum function_id {
 enum macro_id {
     LSHIFT_PAREN,
     RSHIFT_PAREN,
+    TMUX_FULL_SCREEN,
+    TMUX_NEXT_SCREEN,
     HELLO,
     VOLUP,
 };
@@ -132,9 +134,12 @@ const uint16_t fn_actions[] PROGMEM = {
     [2] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),      // LControl with tap Esc*
     [3] = ACTION_LAYER_TAP_KEY(2, KC_F),              // LControl with tap Esc*
     [4] = ACTION_LAYER_TAP_KEY(3, KC_GRAVE),          // Hold escape for mouse mode
-    [5] = ACTION_LAYER_TAP_KEY(4, KC_TAB),            // Hold tab for numpad mode
+    [5] = ACTION_LAYER_TAP_KEY(3, KC_TAB),            // Hold tab for numpad mode
     [6] = ACTION_MACRO_TAP(LSHIFT_PAREN),             // Macro: LShift with tap '('
     [7] = ACTION_MACRO_TAP(RSHIFT_PAREN),             // Macro: RShift with tap ')'
+    [8] = ACTION_MACRO_TAP(TMUX_FULL_SCREEN),         // Macro: Ctrl+A+z (Tmux full screen)
+    [9] = ACTION_LAYER_TAP_KEY(3, KC_GRAVE),          // Hold grave for mouse mode
+    [10] = ACTION_MACRO_TAP(TMUX_NEXT_SCREEN),        // Macro: Ctrl+A+j (Tmux next screen)
 
 //  [8] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_BSPC),       // LControl with tap Backspace
 //  [9] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_ESC),        // LControl with tap Esc
@@ -157,6 +162,16 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     tap_t tap = record->tap;
 
     switch (id) {
+        case TMUX_FULL_SCREEN:
+            if (tap.count > 0 && !tap.interrupted) {
+              return (event.pressed ?
+                      MACRO( D(LCTRL), D(A), U(LCTRL), U(A), D(Z), U(Z), END ) : MACRO_NONE);
+            }
+        case TMUX_NEXT_SCREEN:
+            if (tap.count > 0 && !tap.interrupted) {
+              return (event.pressed ?
+                      MACRO( D(LCTRL), D(A), U(LCTRL), U(A), D(J), U(J), END ) : MACRO_NONE);
+            }
         case LSHIFT_PAREN:
             if (tap.count > 0 && !tap.interrupted) {
                 return (event.pressed ?
